@@ -1,5 +1,5 @@
 <?php
-$outputDirectory = 'C:\\Users\\marcos.junior\\Downloads'; // Especifique o caminho correto para a pasta "downloads"
+$outputDirectory = 'C:\\Users\\marcos.junior\\Downloads'; // Especifique o caminho 
 $segmentDuration = 12 * 60; // 12 minutos em segundos
 
 // Verifica se o arquivo de vídeo foi enviado corretamente
