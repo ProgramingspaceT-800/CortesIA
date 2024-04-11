@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisor de Vídeo</title>
+</head>
+<body>
+    <h2>Divisor de Vídeo</h2>
+    <form action="processar.php" method="post" enctype="multipart/form-data">
+        <label for="video">Selecione o vídeo:</label>
+        <input type="file" name="video" id="video" accept="video/mp4">
+        <br><br>
+        <button type="submit" name="submit">Enviar</button>
+    </form>
+
+    <?php
+    // Verifica se existem arquivos de vídeo divididos e exibe os links para download
+    $outputDirectory = '/caminho/para/diretorio/de/saida/';
+    if (file_exists($outputDirectory)) {
+        $segmentFiles = glob($outputDirectory . '*.mp4');
+        if (!empty($segmentFiles)) {
+            echo '<h3>Vídeo dividido:</h3>';
+            foreach ($segmentFiles as $file) {
+                $fileName = basename($file);
+                echo "<a href='$file' download>$fileName</a><br>";
+            }
+        }
+    }
+    ?>
+</body>
+</html>
